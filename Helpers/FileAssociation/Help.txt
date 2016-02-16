@@ -1,0 +1,48 @@
+CTYPES - command-line Types (file type manager).
+
+Commands are case-insensitive. Wildcards are not supported.
+Nonexistent items are not reported (an empty string is returned).
+
+QUICK EXAMPLES:
+
+Set .txt icon: CTYPES -f -type .txt -set-icon "MyIcon.ico"
+Add Edit menu item: CTYPES .png -verb Edit -set-program "Paint.exe"
+Quick associate: CTYPES -t .txt -associate Notepad.exe
+
+CONTEXT SWITCH:
+
+-type (-t) <type> - switch to Type context (extensions start with ".")
+-verb (-v) <id> - switch to Verb (action) context within a Type context
+
+Short form: -t and -v can be omitted (CTYPES <type> <verb>).
+
+NO CONTEXT:
+
+-list-extensions (-lx)
+-list-classes (-lc)
+-delete-type (-dt) <.extension|class>
+-flush (-f) - refresh Explorer to reveal changes
+
+TYPE CONTEXT:
+
+If the type does not exist, it will be created.
+
+-get-icon (-gi) / -set-icon (-si) <file[,index]>
+-get-class (-gc) / -set-class (-sc) <class>
+-get-name (-gn) / -set-name (-sn) <name>
+-get-default (-gdv) / -set-default (-sdv) <verb>
+-list-verbs (-lv)
+-delete-verb (-dv) <verb>
+-associate (-a) <program> - creates or overwrites "open" verb, adds "" "%1"
+-get-extension-visibility (-gxv) / set-extension-visibility (sxv) <visible(v)|hidden(h)|default(d)>
+-get-perceived (-gp) / -set-perceived (-sp) <system_type>
+
+VERB CONTEXT:
+
+If the verb does not exist, it will be created.
+
+-get-name (-gn) / -set-name (-sn) <name>
+-get-command (-gc) / -set-command (-sc) <command>
+-get-icon (-gi) / set-icon (-si) <file[,index]>
+-get-hidden (-gh) / set-hidden (-sh) <true|false>
+-get-program (-gp) / -set-program (-sp) <program> - like command, but adds "" "%1"
