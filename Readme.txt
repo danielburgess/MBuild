@@ -1,4 +1,4 @@
-﻿=========================
+﻿﻿=========================
 MBuild v1.29 - 2016/01/19
 =========================
 MBuild - A Marvelous Translation and Hacking Tool
@@ -99,39 +99,42 @@ Additional Build Process Notes:
 
 Command-line arguments:
 
-		"build"	-	Used to build a project using a specific XML file. 
-				-	If no argument is specified, this process runs against "MBuild.XML" by default. 
-				-	This behavior can be changed by modifying the "MBuild.exe.config" file's AutoBuild Setting.
-				-	This argument only evaluates the /xmlfile property-- all others are ignored. 
-				-	Example: MBuild build /xmlfile:"c:\folder\file.xml"
+	"build"	-	Used to build a project using a specific XML file. 
+		-	If no argument is specified, this process runs against "MBuild.XML" by default. 
+		-	This behavior can be changed by modifying the "MBuild.exe.config" file's AutoBuild Setting.
+		-	This argument only evaluates the /xmlfile property-- all others are ignored. 
+		-	Example: MBuild build /xmlfile:"c:\folder\file.xml"
 
   "dump-script"	-	Used to dump an unformatted script file. (Currently) Support is planned for pointer table traversal.
 
-   "bin-script" -	Used to build the script file (unicode/ascii txt file) into a binary-formatted file. Support is planned for Pointer table generation.
+   "bin-script" -	Used to build the script file (unicode/ascii txt file) into a binary-formatted file. 
+   		-	Support is planned for Pointer table generation.
 
-		"comp"  -	Uses one of any number of compression types to compress a file. Lunar Compress Types are supported as well as a few others.
-				-	Example:
+	"comp"  -	Uses one of any number of compression types to compress a file. 
+		-	Lunar Compress Types are supported as well as a few others.
+		-	Example:
 
-	   "fixsum" -	Use this argument to fix the checksum of SNES ROM files. Headered and Interleaved ROMs are unsupported.
+       "fixsum" -	Use this argument to fix the checksum of SNES ROM files. Headered and Interleaved ROMs are unsupported.
 
-		  "ips" -	Use this argument to generate an IPS patch.
+	  "ips" -	Use this argument to generate an IPS patch.
 
-	   "xdelta" -	Generates an xDelta3-compatible patch file.
+       "xdelta" -	Generates an xDelta3-compatible patch file.
 
   "bpp-convert" -	Convert a file between a few of the supported bpp formats.
 
-	  "extract" -	Extract binary data from a file at a specific offset.
-				-	Example 1: MBuild extract /input:"PathofFileToExtractFrom" /offset:"FFFF" /length:550
-				-	Example 2: MBuild extract /input:"PathofFileToExtractFrom" /offset:FFFF /length:0x20 /output:"FilePathOfExtractedData"
-				-	Example 3: MBuild extract /input:"PathofFileToExtractFrom" /offset:FFFF /endoffset:1200
-				-	The /input and the /offset flags are required. The /length OR /endoffset flag is also required.
-				-	The /output flag is optional and if unspecified, the outfile will be based on the input name and include the hexadecimal offset of the data that was extracted.
-				-	Offsets can only be specified (currently) in hexadecimal. 
-				-	The /length flag can be a hex number or a decimal number, but you must prefix a hex number with "x" or "0x".
+      "extract" -	Extract binary data from a file at a specific offset.
+		-	Example 1: MBuild extract /input:"PathofFileToExtractFrom" /offset:"FFFF" /length:550
+		-	Example 2: MBuild extract /input:"PathofFileToExtractFrom" /offset:FFFF /length:0x20 /output:"ExtractedData"
+		-	Example 3: MBuild extract /input:"PathofFileToExtractFrom" /offset:FFFF /endoffset:1200
+		-	The /input and the /offset flags are required. The /length OR /endoffset flag is also required.
+		-	The /output flag is optional and if unspecified, the outfile will be based on the input name 
+		-		and include the hexadecimal offset of the data that was extracted.
+		-	Offsets can only be specified (currently) in hexadecimal. 
+		-	The /length flag can be a hex number or a decimal number, but you must prefix a hex number with "x" or "0x".
 
 
 
-  Working on several game-specific tools. Also general tools for bulk dumping of data utilizing pointer table data. (I need more examples of different pointer tables used in games.) So far, I am able to dump data utilizing a pointer table in the case of Marvelous and Super Bomberman 5.
+Working on several game-specific tools. Also general tools for bulk dumping of data utilizing pointer table data. (I need more examples of different pointer tables used in games.) So far, I am able to dump data utilizing a pointer table in the case of Marvelous and Super Bomberman 5. Still very much a work in progress...
 
 X dmpdata
 
